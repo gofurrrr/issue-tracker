@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Tracker</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <!-- daisyui -->
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <!-- tailwiind css -->
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <!--font awesome  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Happy+Monkey&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- style link -->
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body >
+    <div class="hero bg-base-100 min-h-screen ">
+  <div class="hero-content flex-col  mx-auto">
+  
+    <div class="card bg-base-100  shadow-2xl ">
+        
+  <div class="text-center ">
+    <img class="mx-auto pt-5" src="./assets/github-logo.png" alt="">
+      <h1 class="text-2xl font-bold pt-4">GitHub Issues gh</h1>
+      <p class="py-1  text-gray-500 font-normal">
+      Sign in to manage your issues
+      </p>
+    </div>
+
+      <div class="card-body">
+        <fieldset class="fieldset  ">
+          <label class="label font-semibold text-black">Username</label>
+          <input id="username" class="w-90 p-2 rounded-lg border-gray-200 input"   placeholder="Enter Username" />
+          <p class="text-[#4A00FF]">Default: admin</p>
+          <label class="label font-semibold text-black ">Password</label>
+          <input id="password" class="w-90 p-2 rounded-lg border-gray-200 input " type="password"  placeholder="Enter Password" />
+          <p class="text-[#4A00FF]">Default: admin123</p>
+         
+          <button id="signinBtn" class="btn btn-neutral mt-4 bg-[#4A00FF] border-none">Sign In</button>
+        </fieldset>
+        <p class="mx-auto py-4">Or</p>
+        <p class="mx-auto pb-4 t text-gray-500">Demo Credentials:</p>
+        <p class="mx-auto"><span class="font-semibold">Username </span>: adghhhmin</p>
+        <p class="mx-auto mr-29"><span  class="font-semibold">Password </span>: admin123</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script>
+        const signInBtn = document.querySelector("#signinBtn");
+
+   signInBtn.addEventListener("click", function(){
+
+   const username = document.querySelector("#username").value;
+   const password = document.querySelector("#password").value;
+
+   if(username === "admin" && password === "admin123"){
+
+   window.location.href = "issue.html";
+
+}else{
+
+     alert("Invalid username or password");
+
+}
+
+});
+    </script>
+
+</body>
+</html>
