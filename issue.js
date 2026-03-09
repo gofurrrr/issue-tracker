@@ -40,6 +40,8 @@ const div = document.createElement("div");
 div.className = `bg-white shadow-md rounded-lg p-4 ${shadowColor}`;
 
 div.innerHTML = `
+<div onClick="my_modal_5.showModal()"> 
+
 <h3 class="font-bold text-lg mb-2">${issue.title}</h3>
 
 <p class="text-gray-500 text-sm mb-2">${issue.description || ""}</p>
@@ -50,8 +52,9 @@ div.innerHTML = `
 
 <p class="text-gray-500 text-sm mb-2">${issue.createdAt}</p>
 
+</div>
 `;
-issueContainer.appendChild(div);
+ issueContainer.appendChild(div);
 
 }
 );
@@ -77,7 +80,7 @@ openBtn.addEventListener("click", ()=>{
 activeButton(openBtn);
 const openIssues = allIssues.filter(issue => issue.status === "open");
 
-    displayIssues(openIssues);
+        displayIssues(openIssues);
 
 });
 
