@@ -3,6 +3,27 @@ const openBtn = document.querySelector("#openBtn");
 const closedBtn = document.querySelector("#closedBtn");
 const issueContainer = document.querySelector("#issueContainer");
 const issueCount = document.querySelector("#issueCount");
+const searchInput = document.querySelector("#searchOption");
+
+async function searchIssues(searchText){
+const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
+const data = await res.json();
+displayIssues(data.data);
+
+}
+
+
+searchInput.addEventListener("keyup", function(){
+const text = searchInput.value;
+
+    if(text === ""){
+        displayIssues(allIssues);
+        return;
+    }
+
+searchIssues(text);
+});
+
 
 const loadIssueDetail = async(id) => {
     const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
